@@ -15591,3 +15591,29 @@ ActionView::TemplateError (undefined method `user' for nil:NilClass) on line #8 
 Rendered rescues/_trace (42.9ms)
 Rendered rescues/_request_and_response (1.2ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-08-12 21:50:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/companies
+Rendering companies/index
+Completed in 93ms (View: 55, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-08-12 21:50:13) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/companies
+Rendering companies/show
+  [4;36;1mProject Load (0.6ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects".company_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 22) [0m
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 22) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 23) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 24) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 25) [0m
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 25) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 26) [0m
+Completed in 133ms (View: 119, DB: 3) | 200 OK [http://localhost/companies/1]

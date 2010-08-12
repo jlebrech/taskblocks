@@ -15,8 +15,8 @@
 				<%= link_to 'x', p, :confirm => 'Are you sure?', :method => :delete %>
 				
 				<% if !p.tasks.empty? %>
-				<h3>Tasks:</h3>
 					<div class="tasks-index">
+					<h3>Tasks:</h3>
 					<% p.tasks.each do |t| %>
 						<div class="task-box">
 							<%= link_to t.name, t  %>
