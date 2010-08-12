@@ -1,0 +1,26 @@
+<h1>Editing company</h1>
+
+<% form_for(@company) do |f| %>
+  <%= f.error_messages %>
+	<%= f.text_field :name %>
+  <p>
+    <%= f.submit 'Update' %>
+    <% if !@company.user.nil? %>
+		<%= @company.user.username %>
+	<% end %>
+  </p>
+<% end %>
+
+<h2>Projects</h2>
+
+<% @company.projects.each do |project| %>
+	<p>
+	<%=h project.name  %>
+    <%= link_to 'Show', project %>
+    <%= link_to 'Edit', edit_project_path(project) %>
+    <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %>
+	</p>
+<% end %>
+
+<%= link_to 'Show', @company %> |
+<%= link_to 'Back', companies_path %>

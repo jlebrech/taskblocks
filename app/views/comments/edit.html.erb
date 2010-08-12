@@ -1,0 +1,19 @@
+<div class="breadcrumbs">
+	<%= link_to 'Companies', companies_path %> >
+	<%= link_to @comment.task.project.company.name, @comment.task.project.company %> >
+	<%= link_to @comment.task.project.name, @comment.task.project %> >
+	<%= link_to @comment.task.name, @comment.task %>
+</div>
+
+<h1>Editing comment</h1>
+
+<% form_for(@comment) do |f| %>
+  <%= f.error_messages %>
+	<%= f.text_field :comment %>
+  <p>
+    <%= f.submit 'Update' %>
+    <% if !@comment.user.nil? %>
+		<%= @comment.user.username %>
+	<% end %>
+  </p>
+<% end %>

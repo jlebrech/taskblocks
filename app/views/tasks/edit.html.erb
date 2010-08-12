@@ -1,0 +1,15 @@
+<h1>Editing task</h1>
+
+<% form_for(@task) do |f| %>
+  <%= f.error_messages %>
+	<%= f.text_field :name %>
+  <p>
+    <%= f.submit 'Update' %>
+    <% if !@task.user.nil? %>
+		<%= @task.user.username %>
+	<% end %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @task %> |
+<%= link_to 'Back', @task.project %>

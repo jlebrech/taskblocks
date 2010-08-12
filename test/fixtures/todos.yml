@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  sentence: MyString
+  task: 
+  project: 
+  done: 
+
+two:
+  sentence: MyString
+  task: 
+  project: 
+  done: 

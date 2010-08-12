@@ -1,0 +1,45 @@
+
+<div class="breadcrumbs">
+	<%= link_to 'Companies', companies_path %>
+</div>
+
+<div class="company-box">
+	<h1>Company:<%= h @company.name %></h1>
+	<%= link_to 'Edit', edit_company_path(@company) %>
+	
+	<h2>Projects</h2>
+	<div class="projects-index">
+		<% @company.projects.each do |p| %>
+		<% if !p.name.nil? %>
+			<div class="project-box">
+				<%= link_to p.name, p %>
+				<%= link_to 'x', p, :confirm => 'Are you sure?', :method => :delete %>
+				
+				<% if !p.tasks.empty? %>
+				<h3>Tasks:</h3>
+					<div class="tasks-index">
+					<% p.tasks.each do |t| %>
+						<div class="task-box">
+							<%= link_to t.name, t  %>
+							<%= link_to 'x', t, :confirm => 'Are you sure?', :method => :delete %>
+						</div>
+					<% end %>
+					</div>
+				<% end %>
+			</div>
+		<% end %>
+	<% end %>
+	
+	<div class="project-box new-box">
+	<% form_for @company do |c| %>
+		<% c.fields_for :projects,  @company.projects.last do |p| %>
+				<%= p.text_field :name %>
+		<% end %>
+		
+		<%= submit_tag '+' %>
+	<% end %>
+	</div>
+	
+	</div>
+</div>
+

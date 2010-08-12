@@ -1,0 +1,13 @@
+<h1>Listing projects</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= link_to project.name, project %></td>
+    <td><%= link_to 'x', project, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
