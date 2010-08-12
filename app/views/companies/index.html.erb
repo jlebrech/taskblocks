@@ -4,7 +4,6 @@
 
 <% @companies.each do |company| %>
 <div class="company-box">
-   <%=h company.name %>
    <%= link_to company.name, company %>
    <%= link_to 'Edit', edit_company_path(company) %>
    <%= link_to 'x', company, :confirm => 'Are you sure?', :method => :delete %>

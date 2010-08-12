@@ -1,23 +1,25 @@
 .root-box {
    background-color:#4478A6;
-   margin:20px;
+   padding:20px;
 }
 
 .company-box {
    background-color:#83B8D9;
-   margin:20px;
+   padding:20px;
 }
 
 .task-box {
    background-color:#7AA61B;
-   margin:20px;
+   padding:20px;
 }
 .project-box {
    background-color:#6F8C42;
-   margin: 20px;
+   padding: 20px;
 }
 .comment-box {
    background-color:#C1D90D;
-   margin:20px;
+   padding:20px;
 }
+
+div { spacing:5px; }
 
