@@ -1,10 +1,15 @@
-<div class="breadcrumbs">
-	<%= link_to 'Companies', companies_path %> >
-	<%= link_to @comment.task.project.company.name, @comment.task.project.company %> >
-	<%= link_to @comment.task.project.name, @comment.task.project %> >
-	<%= link_to @comment.task.name, @comment.task %>
+<div class="root-box">
+<h1><%= link_to 'Companies', companies_path %></h1>
+<div class="company-box">
+<h1><%= link_to @comment.task.project.company.name, @comment.task.project.company %></h1>
+<div class="project-box">
+<h1><%= link_to @comment.task.project.name, @comment.task.project %></h1>
+<div class="task-box">
+<h1><%= link_to @comment.task.name, @comment.task %></h1>
 </div>
 
+
+<div class="comment-box">
 <h1>Editing comment</h1>
 
 <% form_for(@comment) do |f| %>
@@ -17,3 +22,8 @@
 	<% end %>
   </p>
 <% end %>
+</div>
+</div>
+</div>
+</div>
+</div>
