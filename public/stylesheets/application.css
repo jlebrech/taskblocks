@@ -6,6 +6,7 @@
 .company-box {
    background-color:#83B8D9;
    padding:20px;
+   margin:10px;
 }
 
 .task-box {
@@ -20,6 +21,3 @@
    background-color:#C1D90D;
    padding:20px;
 }
-
-div { spacing:5px; }
-
