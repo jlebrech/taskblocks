@@ -1,2 +1,13 @@
 .task-box {
-background-color:red;}
+   background-color:#FF1753;
+}
+.project-box {
+   background-color:#BDD98D;
+}
+.comment-box {
+   background-color:#E53D08;
+}
+
+.company-box {
+   background-color:#D3FF82;
+}
