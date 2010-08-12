@@ -1,7 +1,9 @@
 <div class="breadcrumbs">
 	<%= link_to 'Companies', companies_path %> >
-	<%= link_to @project.company.name, @project.company %>
 </div>
+
+<div class="company-box">
+<h1><%= link_to @project.company.name, @project.company %></h1>
 
 <div class="project-box">
 <h1>Project:<%= h @project.name %></h1>
