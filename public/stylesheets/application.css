@@ -1,13 +1,18 @@
-.task-box {
-   background-color:#FF1753;
-}
-.project-box {
-   background-color:#BDD98D;
-}
-.comment-box {
-   background-color:#E53D08;
+.root-box {
+   background-color:#4478A6;
 }
 
 .company-box {
-   background-color:#D3FF82;
+   background-color:#83B8D9;
 }
+
+.task-box {
+   background-color:#7AA61B;
+}
+.project-box {
+   background-color:#6F8C42;
+}
+.comment-box {
+   background-color:#C1D90D;
+}
+
