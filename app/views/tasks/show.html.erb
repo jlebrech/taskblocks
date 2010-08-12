@@ -1,11 +1,10 @@
-<div class="breadcrumbs">
+<div class="root-box">
 	<%= link_to 'Companies', companies_path %> >
-<div>
 
 <div class="company-box">
-	<%= link_to @task.project.company.name, @task.project.company %> >
+<h1><%= link_to @task.project.company.name, @task.project.company %></h1>
 <div class="project-box">
-	<%= link_to @task.project.name, @task.project %>
+<h1><%= link_to @task.project.name, @task.project %></h1>
 
 <div class="task-box">
 <h1><%= h @task.name %></h1>
@@ -33,6 +32,7 @@
 <% end %>
 </div>
 
+</div>
 </div>
 </div>
 </div>
