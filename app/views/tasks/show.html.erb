@@ -4,6 +4,7 @@
 	<%= link_to @task.project.name, @task.project %>
 </div>
 
+<div class="task-box">
 <h1>Task:<%= h @task.name %></h1>
 <%= link_to 'Edit', edit_task_path(@task) %>
 <% if !@task.comments.empty? %>
@@ -19,7 +20,7 @@
 	<% end %>
 <% end %>
 
-<div id="comment-box new-box">
+<div class="comment-box new-box">
 <% form_for @task do |c| %>
 	<% c.fields_for :comments,  @task.comments.last do |p| %>
 			<%= p.text_field :comment %>
@@ -29,4 +30,5 @@
 <% end %>
 </div>
 
+</div>
 </div>
