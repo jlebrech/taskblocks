@@ -33,7 +33,7 @@
 	<% form_for @company do |c| %>
 		<% c.fields_for :projects,  @company.projects.last do |p| %>
 				<%= p.text_field :name %>
-                                <%= p.text_field :user %>
+                                <%= p.hidden_field :user %>
 		<% end %>
 		
 		<%= submit_tag '+' %>
