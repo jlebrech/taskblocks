@@ -15,6 +15,7 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @company.projects.build
+    @company.projects.last.user = current_user
     
     respond_to do |format|
       format.html # show.html.erb

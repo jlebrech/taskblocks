@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @project.tasks.build
+    @project.tasks.last.user = current_user
 
     respond_to do |format|
       format.html # show.html.erb

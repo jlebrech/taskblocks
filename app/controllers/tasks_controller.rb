@@ -15,6 +15,7 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
     @task.comments.build
+    @taks.comments.last.user = current_user
 
     respond_to do |format|
       format.html # show.html.erb
