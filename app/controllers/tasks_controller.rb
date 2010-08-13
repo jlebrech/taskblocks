@@ -42,6 +42,7 @@ class TasksController < ApplicationController
   # POST /tasks.xml
   def create
     @task = Task.new(params[:task])
+    @task.user = current_user
 
     respond_to do |format|
       if @task.save
@@ -76,14 +77,16 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @project = @task.project
     
-    if @task.user != current_user
-	    redirect_to(@task, :notice => 'Could not destroy.') 
-	else
-    	@task.destroy # destroy then up a level
-		respond_to do |format|
-			format.html { redirect_to(@project, :notice => 'Successful deletion') }
-			format.xml  { head :ok }
-    	end
+    if logged_in?
+	    if @task.user != current_user
+		    redirect_to(@task, :notice => 'Could not destroy.') 
+		else
+		@task.destroy # destroy then up a level
+			respond_to do |format|
+				format.html { redirect_to(@project, :notice => 'Successful deletion') }
+				format.xml  { head :ok }
+		end
+	    end
     end
   end
 end

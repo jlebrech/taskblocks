@@ -65,15 +65,17 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @task = @comment.task #to redirect to task
-    
-    if @comment.user != current_user
-	    redirect_to(@task, :notice => 'Could not destroy.') 
-	else
-    	@comment.destroy
-		respond_to do |format|
-			format.html { redirect_to(@task) }
-			format.xml  { head :ok }
-    	end
+
+    if logged_in?    
+	    if @comment.user != current_user
+		    redirect_to(@task, :notice => 'Could not destroy.') 
+		else
+		@comment.destroy
+			respond_to do |format|
+				format.html { redirect_to(@task) }
+				format.xml  { head :ok }
+		end
+	    end
     end
 
   end

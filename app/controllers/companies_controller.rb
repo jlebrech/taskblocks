@@ -42,6 +42,7 @@ class CompaniesController < ApplicationController
   # POST /companies.xml
   def create
     @company = Company.new(params[:company])
+    @company.user = current_user
 
     respond_to do |format|
       if @company.save
@@ -75,14 +76,16 @@ class CompaniesController < ApplicationController
   def destroy
     @company = Company.find(params[:id])
 
-    if @company.user != current_user
-	    redirect_to(@company, :notice => 'Could not destroy.') 
-	else
-    	@company.destroy
-		respond_to do |format|
-			format.html { redirect_to(root_url, :notice => 'Successful deletion') }
-			format.xml  { head :ok }
-    	end
+    if logged_in?
+	    if @company.user != current_user
+		    redirect_to(@company, :notice => 'Could not destroy.') 
+		else
+		@company.destroy
+			respond_to do |format|
+				format.html { redirect_to(root_url, :notice => 'Successful deletion') }
+				format.xml  { head :ok }
+		end
+	    end
     end
 
   end

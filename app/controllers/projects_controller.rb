@@ -42,6 +42,7 @@ class ProjectsController < ApplicationController
   # POST /projects.xml
   def create
     @project = Project.new(params[:project])
+    @project.user = current_user
 
     respond_to do |format|
       if @project.save
@@ -76,14 +77,16 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @company = @project.company
     
-    if @project.user != current_user
-	    redirect_to(@project, :notice => 'Could not destroy.') 
-	else
-    	@project.destroy
-		respond_to do |format|
-			format.html { redirect_to(@company, :notice => 'Successful deletion') }
-			format.xml  { head :ok }
-    	end
+    if logged_in?
+	    if @project.user != current_user
+		    redirect_to(@project, :notice => 'Could not destroy.') 
+		else
+		@project.destroy
+			respond_to do |format|
+				format.html { redirect_to(@company, :notice => 'Successful deletion') }
+				format.xml  { head :ok }
+		end
+	    end
     end
   end
 end
