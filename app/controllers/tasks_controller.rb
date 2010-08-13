@@ -77,7 +77,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @project = @task.project
     
-    if current_user?
+    if current_user
 	    if @task.user != current_user
 		    redirect_to(@task, :notice => 'Could not destroy.') 
 		else
