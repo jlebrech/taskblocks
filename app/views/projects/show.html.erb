@@ -8,8 +8,8 @@
 <div class="project-box">
 <h1><%= h @project.name %></h1>
 <%= link_to 'Edit', edit_project_path(@project) %>
-<h2>Tasks</h2>
 <div class="tasks-index">
+<h2>Tasks</h2>
 	<% @project.tasks.each do |p| %>
 	<% if !p.name.nil? %>
 		<div class="task-box">
@@ -17,8 +17,8 @@
 			<%= link_to 'x', p, :confirm => 'Are you sure?', :method => :delete %>
 
 			<% if !p.comments.empty? %>
-				<h3>Comments</h3>
 				<div class="comments-index">
+				<h3>Comments</h3>
 				<% p.comments.each do |c| %>
 						<div class="comment-box">
 							<%= link_to c.comment, :controller => 'comments',:action => "edit", :id => c  %>
