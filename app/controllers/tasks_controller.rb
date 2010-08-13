@@ -87,9 +87,9 @@ class TasksController < ApplicationController
 			respond_to do |format|
 				format.html { redirect_to(@project, :notice => 'Successful deletion') }
 				format.xml  { head :ok }
+			
 			end
-		end
-	    end
+	    	end
     end
   end
 end
