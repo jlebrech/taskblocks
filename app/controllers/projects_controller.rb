@@ -60,6 +60,7 @@ class ProjectsController < ApplicationController
   # PUT /projects/1.xml
   def update
     @project = Project.find(params[:id])
+    @project.user = current_user
 
     respond_to do |format|
       if @project.update_attributes(params[:project])

@@ -60,6 +60,7 @@ class CompaniesController < ApplicationController
   # PUT /companies/1.xml
   def update
     @company = Company.find(params[:id])
+    @company.user = current_user
 
     respond_to do |format|
       if @company.update_attributes(params[:company])
