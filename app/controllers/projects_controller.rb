@@ -76,7 +76,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @company = @project.company
-    
+
     if logged_in?
 	    if @project.user != current_user
 		    redirect_to(@project, :notice => 'Could not destroy.') 
