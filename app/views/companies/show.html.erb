@@ -4,7 +4,9 @@
 
 <div class="company-box">
 	<h1><%= h @company.name %></h1>
-	<h2><%= h @company.user.username %></h2>
+	<% if !@company.user.nil? %>
+		<h2><%= h @company.user.username %></h2>
+	<% end %>
 	<%= link_to 'Edit', edit_company_path(@company) %>
 	
 	<h2>Projects</h2>

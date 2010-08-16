@@ -8,7 +8,9 @@
 
 <div class="task-box">
 <h1><%= h @task.name %></h1>
-<h2><%= h @task.user.username %></h2>
+<% if !@task.user.nil? %>
+	<h2><%= h @task.user.username %></h2>
+<% end %>
 <%= link_to 'Edit', edit_task_path(@task) %>
 <% if !@task.comments.empty? %>
 	<div class="comments-index">
