@@ -61,7 +61,7 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
 
-    params[:company] do |pc|
+    params do |pc|
        rndr = pc
     end
 
