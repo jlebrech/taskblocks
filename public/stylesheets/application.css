@@ -35,6 +35,6 @@ a.edit, a.delete {
 div.username {
    float: right;
    position: relative;
-   padding: 5px;
+   padding-left: 5px;
    top: 0px;
 }
