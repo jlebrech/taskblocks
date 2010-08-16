@@ -63,6 +63,7 @@ class ProjectsController < ApplicationController
     @project.user = current_user
 
     @project.tasks.each do |t| # set every .nil task to current user
+	debug t
 	if t.user.nil?
 	   t.user = current_user
 	end
