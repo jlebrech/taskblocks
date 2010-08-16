@@ -34,4 +34,6 @@ a.edit, a.delete {
 
 div.username {
    float: right;
+   position: relative;
+   top: 0px;
 }
