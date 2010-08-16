@@ -25,3 +25,7 @@
    padding:20px;
    margin:10px;
 }
+
+.edit, .delete {
+   float: top right;
+}
