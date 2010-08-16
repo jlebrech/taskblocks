@@ -61,7 +61,7 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
 
-    @proj = params[:company][:projects_attributes]
+    @proj = params
 
     return render :json => @proj  
 
