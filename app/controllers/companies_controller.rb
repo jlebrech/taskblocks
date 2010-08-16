@@ -61,7 +61,7 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
 
-    return render :text => params 
+    return render :text => params[:projects_attributes] 
 
     respond_to do |format|
       if @company.update_attributes(params[:company])
