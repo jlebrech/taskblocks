@@ -1,6 +1,6 @@
 <div class="root-box">
 
-<h1><%= link_to 'Companies', companies_path %></h1>
+<h1><%= link_to 'Companies', companies_path %>:</h1>
 
 <div class="company-box">
 <h1><%= link_to @project.company.name, @project.company %></h1>
@@ -12,7 +12,7 @@
 <% end %>
 <%= link_to 'Edit', edit_project_path(@project), :class => 'edit' %>
 <div class="tasks-index">
-<h2>Tasks</h2>
+<h2>Tasks:</h2>
 	<% @project.tasks.each do |p| %>
 	<% if !p.name.nil? %>
 	
@@ -22,7 +22,7 @@
 
 			<% if !p.comments.empty? %>
 				
-				<h4>Comments</h4>
+				<h4>Comments:</h4>
 				<% p.comments.each do |c| %>
 						<div class="comment-box">
 							<%= link_to c.comment, :controller => 'comments',:action => "edit", :id => c  %>

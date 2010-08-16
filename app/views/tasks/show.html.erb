@@ -14,7 +14,7 @@
 <%= link_to 'Edit', edit_task_path(@task), :class => 'edit' %>
 <% if !@task.comments.empty? %>
 
-	<h2>Comments</h2>
+	<h2>Comments:</h2>
 		<% @task.comments.each do |p| %>
 		<% if !p.comment.nil? %>
 			<div class="comment-box">

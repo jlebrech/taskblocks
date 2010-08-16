@@ -1,6 +1,6 @@
 
 <div class="root-box">
-<h1><%= link_to 'Companies', companies_path %></h1>
+<h1><%= link_to 'Companies', companies_path %>:</h1>
 
 <div class="company-box">
 	<h1><%= h @company.name %></h1>
@@ -9,7 +9,7 @@
 	<% end %>
 	<%= link_to 'Edit', edit_company_path(@company), :class => 'edit' %>
 	
-	<h2>Projects</h2>
+	<h2>Projects:</h2>
 		<% @company.projects.each do |p| %>
 		<% if !p.name.nil? %>
 			<div class="project-box">
