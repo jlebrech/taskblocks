@@ -4,23 +4,23 @@
 }
 
 
-.company-box, .companies-index {
+.company-box{
    background-color:#83B8D9;
    padding:20px;
    margin:10px;
 }
 
-.task-box, .tasks-index {
+.task-box {
    background-color:#7AA61B;
    padding:20px;
    margin:10px;
 }
-.project-box, .projects-index {
+.project-box {
    background-color:#6F8C42;
    padding: 20px;
    margin:10px;
 }
-.comment-box, .comments-index {
+.comment-box{
    background-color:#C1D90D;
    padding:20px;
    margin:10px;

@@ -15,12 +15,13 @@
 <h2>Tasks</h2>
 	<% @project.tasks.each do |p| %>
 	<% if !p.name.nil? %>
+	
 		<div class="task-box">
 			<%= link_to p.name, p %>
 			<%= link_to 'x', p, :confirm => 'Are you sure?', :method => :delete %>
 
 			<% if !p.comments.empty? %>
-				<div class="comments-index">
+				
 				<h3>Comments</h3>
 				<% p.comments.each do |c| %>
 						<div class="comment-box">
@@ -28,10 +29,10 @@
 							<%= link_to 'x', c, :confirm => 'Are you sure?', :method => :delete %>
 						</div>
 				<% end %>
-				</div>
+				
 			<% end %>
-			
 		</div>
+		
 	<% end %>
 <% end %>
 
