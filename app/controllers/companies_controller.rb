@@ -63,9 +63,7 @@ class CompaniesController < ApplicationController
     # @company.user = current_user
 
     @company.projects.each do |p|
-	if p.user.nil?
-		p.user = current_user
-	end
+	p.user = current_user
     end
 
     respond_to do |format|
