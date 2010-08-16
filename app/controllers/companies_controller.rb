@@ -61,7 +61,7 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
 
-    params[:company] |val|
+    params[:company] do |val|
 	return render :text => val
     end
 
