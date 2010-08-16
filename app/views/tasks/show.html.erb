@@ -13,16 +13,17 @@
 <% end %>
 <%= link_to 'Edit', edit_task_path(@task) %>
 <% if !@task.comments.empty? %>
-	<div class="comments-index">
+
 	<h2>Comments</h2>
 		<% @task.comments.each do |p| %>
 		<% if !p.comment.nil? %>
 			<div class="comment-box">
-				<%= link_to p.comment, :controller => 'comments',:action => "edit", :id => p  %>
-				<%= link_to 'x', p, :confirm => 'Are you sure?', :method => :delete %>
+				<%= link_to p.comment, :controller => 'comments',:action => "edit", :id => p, :class => 'edit'  %>
+				<%= link_to 'x', p, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %>
 			</div>
 		<% end %>
 	<% end %>
+	
 <% end %>
 
 <div class="comment-box new-box">
