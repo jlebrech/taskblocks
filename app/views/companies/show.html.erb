@@ -7,21 +7,21 @@
 	<% if !@company.user.nil? %>
 		<h2><%= h @company.user.username %></h2>
 	<% end %>
-	<%= link_to 'Edit', edit_company_path(@company) %>
+	<%= link_to 'Edit', edit_company_path(@company), :class => 'edit' %>
 	
 	<h2>Projects</h2>
 		<% @company.projects.each do |p| %>
 		<% if !p.name.nil? %>
 			<div class="project-box">
 			<h3><%= link_to p.name, p %></h3>
-			<%= link_to 'x', p, :confirm => 'Are you sure?', :method => :delete %>
+			<%= link_to 'x', p, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %>
 			
 			<% if !p.tasks.empty? %>
 				<h4>Tasks:</h4>
 				<% p.tasks.each do |t| %>
 					<div class="task-box">
 						<%= link_to t.name, t  %>
-						<%= link_to 'x', t, :confirm => 'Are you sure?', :method => :delete %>
+						<%= link_to 'x', t, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %>
 					</div>
 				<% end %>
 			<% end %>
