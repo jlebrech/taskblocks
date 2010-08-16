@@ -10,7 +10,7 @@
 <% if !@project.user.nil? %>
 	<h2><%= h @project.user.username %></h2>
 <% end %>
-<%= link_to 'Edit', edit_project_path(@project) %>
+<%= link_to 'Edit', edit_project_path(@project), :class => 'edit' %>
 <div class="tasks-index">
 <h2>Tasks</h2>
 	<% @project.tasks.each do |p| %>
@@ -18,7 +18,7 @@
 	
 		<div class="task-box">
 			<%= link_to p.name, p %>
-			<%= link_to 'x', p, :confirm => 'Are you sure?', :method => :delete %>
+			<%= link_to 'x', p, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %>
 
 			<% if !p.comments.empty? %>
 				
@@ -26,7 +26,7 @@
 				<% p.comments.each do |c| %>
 						<div class="comment-box">
 							<%= link_to c.comment, :controller => 'comments',:action => "edit", :id => c  %>
-							<%= link_to 'x', c, :confirm => 'Are you sure?', :method => :delete %>
+							<%= link_to 'x', c, :confirm => 'Are you sure?', :method => :delete, :class => 'delete' %>
 						</div>
 				<% end %>
 				
