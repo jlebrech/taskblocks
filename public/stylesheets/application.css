@@ -28,4 +28,6 @@
 
 a.edit, a.delete {
    float: right;
+   position: relative;
+   top: 0px;
 }
