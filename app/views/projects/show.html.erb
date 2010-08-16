@@ -8,7 +8,7 @@
 <div class="project-box">
 <h1><%= h @project.name %></h1>
 <% if !@project.user.nil? %>
-	<h2><%= h @project.user.username %></h2>
+	<div class="username"><%= h @project.user.username %></div>
 <% end %>
 <%= link_to 'Edit', edit_project_path(@project), :class => 'edit' %>
 <div class="tasks-index">
