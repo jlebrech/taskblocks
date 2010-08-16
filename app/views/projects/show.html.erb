@@ -39,7 +39,7 @@
 <div class="task-box new-box">
 <% form_for @project do |c| %>
 	<% c.fields_for :tasks,  @project.tasks.last do |p| %>
-			<%= p.text_field :name %>
+			<%= p.text_field :name, :label => 'add task' %>
 	<% end %>
 	
 	<%= submit_tag '+' %>
