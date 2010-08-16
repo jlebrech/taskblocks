@@ -15617,3 +15617,224 @@ Rendering companies/show
   [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 25) [0m
   [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 26) [0m
 Completed in 133ms (View: 119, DB: 3) | 200 OK [http://localhost/companies/1]
+  [4;36;1mProject Load (7.3ms)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mSQL (5.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mProject Load (6.0ms)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mProject Load (10.7ms)[0m   [0mSELECT * FROM "projects" [0m
+  [4;36;1mProject Load (5.7ms)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mProject Load (5.8ms)[0m   [0mSELECT * FROM "projects" [0m
+  [4;36;1mProject Load (6.6ms)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mProject Load (0.8ms)[0m   [0mSELECT * FROM "projects" LIMIT 1[0m
+  [4;36;1mProject Load (1.4ms)[0m   [0;1mSELECT * FROM "projects" LIMIT 1[0m
+  [4;35;1mTask Load (0.8ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".project_id = 9) [0m
+  [4;36;1mProject Load (3.5ms)[0m   [0;1mSELECT * FROM "projects" LIMIT 1[0m
+  [4;35;1mTask Load (0.7ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".project_id = 9) [0m
+  [4;36;1mTask Load (5.7ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-08-16 09:54:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (2.5ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/companies
+Rendering companies/index
+Completed in 211ms (View: 170, DB: 3) | 200 OK [http://0.0.0.0/]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-08-16 09:54:16) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.9ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+  [4;36;1mProject Load (2.1ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects".company_id = 1) [0m
+Rendering template within layouts/companies
+Rendering companies/show
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;36;1mTask Load (0.8ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 22) [0m
+  [4;36;1mTask Load (1.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 22) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 23) [0m
+  [4;36;1mSQL (70.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 24) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 25) [0m
+  [4;36;1mTask Load (1.1ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 25) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 26) [0m
+Completed in 355ms (View: 161, DB: 79) | 200 OK [http://0.0.0.0/companies/1]
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2010-08-16 09:54:20) [GET]
+  Parameters: {"action"=>"show", "id"=>"21", "controller"=>"projects"}
+
+SyntaxError (/home/joseph/severe-fire-37/app/controllers/projects_controller.rb:65: syntax error, unexpected tIDENTIFIER, expecting kEND
+    @project.tasks.each do |t| // set every .nil task to current user
+                                     ^):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (57.5ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-08-16 09:54:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.2ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/companies
+Rendering companies/index
+Completed in 79ms (View: 57, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-08-16 09:54:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+  [4;36;1mProject Load (2.0ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects".company_id = 1) [0m
+Rendering template within layouts/companies
+Rendering companies/show
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;36;1mTask Load (0.8ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 22) [0m
+  [4;36;1mTask Load (1.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 22) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 23) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 24) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 25) [0m
+  [4;36;1mTask Load (1.1ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 25) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 26) [0m
+Completed in 297ms (View: 123, DB: 10) | 200 OK [http://0.0.0.0/companies/1]
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-08-16 09:55:05) [GET]
+  Parameters: {"action"=>"show", "id"=>"21", "controller"=>"projects"}
+  [4;36;1mProject Load (0.8ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 21) [0m
+  [4;35;1mTask Load (0.8ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+Rendering template within layouts/projects
+Rendering projects/show
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 11) [0m
+  [4;36;1mComment Load (0.8ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".task_id = 11) [0m
+Completed in 205ms (View: 118, DB: 4) | 200 OK [http://0.0.0.0/projects/21]
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-08-16 09:55:15) [PUT]
+  Parameters: {"commit"=>"+", "action"=>"update", "_method"=>"put", "authenticity_token"=>"nq7xa2di0B/26GDtcOznJL4YZvDJNSWiR8gZw51Yeg0=", "id"=>"21", "project"=>{"tasks_attributes"=>{"0"=>{"name"=>"test"}}}, "controller"=>"projects"}
+  [4;35;1mProject Load (0.8ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 21) [0m
+  [4;36;1mTask Load (0.9ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;35;1mTask Create (1.1ms)[0m   [0mINSERT INTO "tasks" ("name", "created_at", "project_id", "updated_at", "user_id") VALUES('test', '2010-08-16 08:55:15', 21, '2010-08-16 08:55:15', NULL)[0m
+Redirected to http://0.0.0.0:3000/projects/21
+Completed in 109ms (DB: 3) | 302 Found [http://0.0.0.0/projects/21]
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-08-16 09:55:23) [PUT]
+  Parameters: {"commit"=>"+", "action"=>"update", "_method"=>"put", "authenticity_token"=>"nq7xa2di0B/26GDtcOznJL4YZvDJNSWiR8gZw51Yeg0=", "id"=>"21", "project"=>{"tasks_attributes"=>{"0"=>{"name"=>"test"}}}, "controller"=>"projects"}
+  [4;36;1mProject Load (0.8ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 21) [0m
+  [4;35;1mTask Load (1.1ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;36;1mTask Create (1.0ms)[0m   [0;1mINSERT INTO "tasks" ("name", "created_at", "project_id", "updated_at", "user_id") VALUES('test', '2010-08-16 08:55:23', 21, '2010-08-16 08:55:23', NULL)[0m
+Redirected to http://0.0.0.0:3000/projects/21
+Completed in 110ms (DB: 3) | 302 Found [http://0.0.0.0/projects/21]
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-08-16 09:55:26) [PUT]
+  Parameters: {"commit"=>"+", "action"=>"update", "_method"=>"put", "authenticity_token"=>"nq7xa2di0B/26GDtcOznJL4YZvDJNSWiR8gZw51Yeg0=", "id"=>"21", "project"=>{"tasks_attributes"=>{"0"=>{"name"=>"test"}}}, "controller"=>"projects"}
+  [4;35;1mProject Load (0.7ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 21) [0m
+  [4;36;1mTask Load (1.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;35;1mTask Create (1.2ms)[0m   [0mINSERT INTO "tasks" ("name", "created_at", "project_id", "updated_at", "user_id") VALUES('test', '2010-08-16 08:55:26', 21, '2010-08-16 08:55:26', NULL)[0m
+Redirected to http://0.0.0.0:3000/projects/21
+Completed in 107ms (DB: 3) | 302 Found [http://0.0.0.0/projects/21]
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-08-16 09:55:28) [PUT]
+  Parameters: {"commit"=>"+", "action"=>"update", "_method"=>"put", "authenticity_token"=>"nq7xa2di0B/26GDtcOznJL4YZvDJNSWiR8gZw51Yeg0=", "id"=>"21", "project"=>{"tasks_attributes"=>{"0"=>{"name"=>"test"}}}, "controller"=>"projects"}
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 21) [0m
+  [4;35;1mTask Load (1.8ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;36;1mTask Create (0.9ms)[0m   [0;1mINSERT INTO "tasks" ("name", "created_at", "project_id", "updated_at", "user_id") VALUES('test', '2010-08-16 08:55:28', 21, '2010-08-16 08:55:28', NULL)[0m
+Redirected to http://0.0.0.0:3000/projects/21
+Completed in 106ms (DB: 4) | 302 Found [http://0.0.0.0/projects/21]
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-08-16 09:55:29) [PUT]
+  Parameters: {"commit"=>"+", "action"=>"update", "_method"=>"put", "authenticity_token"=>"nq7xa2di0B/26GDtcOznJL4YZvDJNSWiR8gZw51Yeg0=", "id"=>"21", "project"=>{"tasks_attributes"=>{"0"=>{"name"=>"test"}}}, "controller"=>"projects"}
+  [4;35;1mProject Load (0.8ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 21) [0m
+  [4;36;1mTask Load (1.9ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;35;1mTask Create (1.0ms)[0m   [0mINSERT INTO "tasks" ("name", "created_at", "project_id", "updated_at", "user_id") VALUES('test', '2010-08-16 08:55:29', 21, '2010-08-16 08:55:29', NULL)[0m
+Redirected to http://0.0.0.0:3000/projects/21
+Completed in 112ms (DB: 4) | 302 Found [http://0.0.0.0/projects/21]
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-08-16 09:55:30) [PUT]
+  Parameters: {"commit"=>"+", "action"=>"update", "_method"=>"put", "authenticity_token"=>"nq7xa2di0B/26GDtcOznJL4YZvDJNSWiR8gZw51Yeg0=", "id"=>"21", "project"=>{"tasks_attributes"=>{"0"=>{"name"=>"test"}}}, "controller"=>"projects"}
+  [4;36;1mProject Load (0.7ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 21) [0m
+  [4;35;1mTask Load (1.6ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;36;1mTask Create (0.9ms)[0m   [0;1mINSERT INTO "tasks" ("name", "created_at", "project_id", "updated_at", "user_id") VALUES('test', '2010-08-16 08:55:30', 21, '2010-08-16 08:55:30', NULL)[0m
+Redirected to http://0.0.0.0:3000/projects/21
+Completed in 107ms (DB: 3) | 302 Found [http://0.0.0.0/projects/21]
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-08-16 09:55:46) [GET]
+  Parameters: {"action"=>"show", "id"=>"21", "controller"=>"projects"}
+  [4;35;1mProject Load (1.3ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 21) [0m
+  [4;36;1mTask Load (2.5ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+Rendering template within layouts/projects
+Rendering projects/show
+  [4;35;1mCompany Load (2.0ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 11) [0m
+  [4;35;1mComment Load (0.9ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".task_id = 11) [0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 13) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 14) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 15) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 16) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 17) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 18) [0m
+Completed in 274ms (View: 179, DB: 12) | 200 OK [http://0.0.0.0/projects/21]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-08-16 09:55:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+  [4;35;1mProject Load (2.3ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects".company_id = 1) [0m
+Rendering template within layouts/companies
+Rendering companies/show
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;35;1mTask Load (2.6ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 22) [0m
+  [4;35;1mTask Load (1.2ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".project_id = 22) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 23) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 24) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 25) [0m
+  [4;35;1mTask Load (1.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks".project_id = 25) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tasks" WHERE ("tasks".project_id = 26) [0m
+Completed in 251ms (View: 154, DB: 12) | 200 OK [http://0.0.0.0/companies/1]
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-08-16 09:56:08) [GET]
+  Parameters: {"action"=>"show", "id"=>"21", "controller"=>"projects"}
+  [4;35;1mProject Load (0.8ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 21) [0m
+  [4;36;1mTask Load (2.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks".project_id = 21) [0m
+Rendering template within layouts/projects
+Rendering projects/show
+  [4;35;1mCompany Load (1.1ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 11) [0m
+  [4;35;1mComment Load (0.9ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".task_id = 11) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 13) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 14) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 15) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 16) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 17) [0m
+  [4;35;1mSQL (17.3ms)[0m   [0mSELECT count(*) AS count_all FROM "comments" WHERE ("comments".task_id = 18) [0m
+Completed in 283ms (View: 174, DB: 25) | 200 OK [http://0.0.0.0/projects/21]
+
+
+Processing CommentsController#edit (for 127.0.0.1 at 2010-08-16 09:56:15) [GET]
+  Parameters: {"action"=>"edit", "id"=>"10", "controller"=>"comments"}
+  [4;36;1mComment Load (0.9ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments"."id" = 10) [0m
+Rendering template within layouts/comments
+Rendering comments/edit
+  [4;35;1mTask Load (0.7ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 11) [0m
+  [4;36;1mProject Load (0.7ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 21) [0m
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Completed in 207ms (View: 179, DB: 3) | 200 OK [http://0.0.0.0/comments/10/edit]

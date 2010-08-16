@@ -62,6 +62,12 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.user = current_user
 
+    @project.tasks.each do |t| # set every .nil task to current user
+	if t.user = nil
+	   t.user = current_user
+	end
+    end
+
     respond_to do |format|
       if @project.update_attributes(params[:project])
         format.html { redirect_to(@project, :notice => 'Project was successfully updated.') }
