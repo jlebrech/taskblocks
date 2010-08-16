@@ -15,7 +15,6 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
     @task.comments.build
-    @taks.comments.last.user = current_user
 
     respond_to do |format|
       format.html # show.html.erb
@@ -43,7 +42,6 @@ class TasksController < ApplicationController
   # POST /tasks.xml
   def create
     @task = Task.new(params[:task])
-    @task.user = current_user
 
     respond_to do |format|
       if @task.save
