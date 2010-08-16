@@ -60,7 +60,12 @@ class CompaniesController < ApplicationController
   # PUT /companies/1.xml
   def update
     @company = Company.find(params[:id])
-    render :text => params[:company]
+
+    params[:company] do |pc|
+       rndr = pc
+    end
+
+    return render :text => rndr
 
     respond_to do |format|
       if @company.update_attributes(params[:company])
