@@ -63,7 +63,7 @@ class CompaniesController < ApplicationController
 
     @proj = params
 
-    return render :json => @proj  
+    return render :json => @proj[:companies][:project_attributes][0]  
 
     respond_to do |format|
       if @company.update_attributes(params[:company])
