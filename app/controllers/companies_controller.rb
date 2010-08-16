@@ -61,18 +61,16 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
 
-    @proj = params
-
-    return render :json => @proj[:company][:projects_attributes]["0"][:user_id] 
-
-    respond_to do |format|
-      if @company.update_attributes(params[:company])
-        format.html { redirect_to(@company, :notice => 'Company was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @company.errors, :status => :unprocessable_entity }
-      end
+    if params[:company][:projects_attributes]["0"][:user_id] == current_user
+	    respond_to do |format|
+	      if @company.update_attributes(params[:company])
+		format.html { redirect_to(@company, :notice => 'Company was successfully updated.') }
+		format.xml  { head :ok }
+	      else
+		format.html { render :action => "edit" }
+		format.xml  { render :xml => @company.errors, :status => :unprocessable_entity }
+	      end
+	    end
     end
   end
 
