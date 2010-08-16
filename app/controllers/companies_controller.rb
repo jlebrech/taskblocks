@@ -61,11 +61,9 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
 
-    params do |pc|
-       rndr = pc
+    params.each |key,value|
+	puts value
     end
-
-    return render :text => rndr
 
     respond_to do |format|
       if @company.update_attributes(params[:company])
