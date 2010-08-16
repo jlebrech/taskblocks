@@ -61,7 +61,7 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
 
-    if params[:company][:projects_attributes]["0"][:user_id] == current_user
+    if params[:company][:projects_attributes]["0"][:user_id] == current_user.id
 	    respond_to do |format|
 	      if @company.update_attributes(params[:company])
 		format.html { redirect_to(@company, :notice => 'Company was successfully updated.') }
