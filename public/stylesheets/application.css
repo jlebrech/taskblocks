@@ -26,6 +26,6 @@
    margin:10px;
 }
 
-.edit, .delete {
+a.edit, a.delete {
    float: top right;
 }
