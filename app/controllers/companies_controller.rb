@@ -15,7 +15,6 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @company.projects.build
-    @company.projects.last.user = current_user
     
     respond_to do |format|
       format.html # show.html.erb
@@ -43,7 +42,10 @@ class CompaniesController < ApplicationController
   # POST /companies.xml
   def create
     @company = Company.new(params[:company])
-    @company.user = current_user
+    
+    if !current_user.nil
+	    @company.user = current_user
+    end
 
     respond_to do |format|
       if @company.save
