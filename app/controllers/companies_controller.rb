@@ -90,6 +90,8 @@ class CompaniesController < ApplicationController
 				format.xml  { head :ok }
 		end
 	    end
+    else
+	redirect_to(@company, :notice => 'You are not logged in, sorry')
     end
 
   end
