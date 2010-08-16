@@ -5,7 +5,7 @@
 <div class="company-box">
 	<h1><%= h @company.name %></h1>
 	<% if !@company.user.nil? %>
-		<h2><%= h @company.user.username %></h2>
+		<div class="username"><%= h @company.user.username %></div>
 	<% end %>
 	<%= link_to 'Edit', edit_company_path(@company), :class => 'edit' %>
 	
