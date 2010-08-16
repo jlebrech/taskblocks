@@ -13,12 +13,15 @@
 .task-box, .tasks-index {
    background-color:#7AA61B;
    padding:20px;
+   margin:10px;
 }
 .project-box, .projects-index {
    background-color:#6F8C42;
    padding: 20px;
+   margin:10px;
 }
 .comment-box, .comments-index {
    background-color:#C1D90D;
    padding:20px;
+   margin:10px;
 }
