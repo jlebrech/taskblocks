@@ -80,7 +80,7 @@ class CompaniesController < ApplicationController
   def destroy
     @company = Company.find(params[:id])
 
-    if current_user
+    if !current_user.nil
 	    if @company.user != current_user
 		    redirect_to(@company, :notice => 'Could not destroy.') 
 		else
