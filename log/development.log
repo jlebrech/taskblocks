@@ -16138,3 +16138,216 @@ Processing CompaniesController#update (for 127.0.0.1 at 2010-08-16 15:21:25) [PU
   Parameters: {"company"=>{"projects_attributes"=>{"0"=>{"name"=>"test", "user_id"=>"1"}}}, "commit"=>"+", "action"=>"update", "_method"=>"put", "authenticity_token"=>"lZRLxT0JHKV+T3ZXjKXok1ldr9BfF216nOIkxxoYlAg=", "id"=>"1", "controller"=>"companies"}
   [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
 Completed in 29ms (View: 2, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-08-27 21:14:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.4ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/companies
+Rendering companies/index
+Completed in 91ms (View: 46, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-08-27 21:14:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (69.1ms)
+Completed in 97ms (View: 87, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-08-27 21:14:24) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"SQ8v3sDwmvWhyZ7SfT/L8ME5EBDwCuc8M94fK/iKekU=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"joseph", "password"=>"[FILTERED]", "email"=>"jlebrech@hotmail.com"}}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'jlebrech@hotmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'joseph') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '263bd866dd7c181f66d6cea9dce7296672300112a91cc9b998c15a91f5bba456ba3d2a84a8b0917e1b04e7f29e8520a1e975762de20b0c74701627ca98aa3671') LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/new
+Rendered users/_form (6.4ms)
+Completed in 223ms (View: 11, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-08-27 21:14:32) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"SQ8v3sDwmvWhyZ7SfT/L8ME5EBDwCuc8M94fK/iKekU=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"joseph", "password"=>"[FILTERED]", "email"=>"jlebrech2@hotmail.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'jlebrech2@hotmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'joseph') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '346b6adf0c4c98d5d68c1994600a8a0b041c47b2329c8451291d1e272a026a79cbe9efbdedf8c1dc0bf35eb612d7166022903adf685d64d60417508d91f3fe74') LIMIT 1[0m
+  [4;35;1mUser Create (0.9ms)[0m   [0mINSERT INTO "users" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-08-27 20:14:32', 'b81cca25df9fa8a3b7dde7cb270897729fc893a94f29f46a0b16f6f6548a3d0603e9f1a6e04c9d496e7c64bdad8f682936281b309a63e51c3b9c55a40421d734', '2010-08-27 20:14:32', 'joseph', '8gE34Ax_D614Po4lvoJH', '346b6adf0c4c98d5d68c1994600a8a0b041c47b2329c8451291d1e272a026a79cbe9efbdedf8c1dc0bf35eb612d7166022903adf685d64d60417508d91f3fe74', 'jlebrech2@hotmail.com')[0m
+Redirected to http://localhost:3000/
+Completed in 29ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-08-27 21:14:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '346b6adf0c4c98d5d68c1994600a8a0b041c47b2329c8451291d1e272a026a79cbe9efbdedf8c1dc0bf35eb612d7166022903adf685d64d60417508d91f3fe74') LIMIT 1[0m
+Completed in 106ms (View: 22, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-08-30 08:22:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.6ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/companies
+Rendering companies/index
+Completed in 308ms (View: 268, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-08-30 08:22:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/companies
+Rendering companies/new
+Completed in 89ms (View: 82, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#create (for 127.0.0.1 at 2010-08-30 08:22:46) [POST]
+  Parameters: {"company"=>{"name"=>"test"}, "commit"=>"Create", "action"=>"create", "authenticity_token"=>"HnpmiVULSvx/KYlUiH49cbgA0CrCrgrCsnHQCugm9XE=", "controller"=>"companies"}
+
+NoMethodError (undefined method `nil' for nil:NilClass):
+  app/controllers/companies_controller.rb:46:in `create'
+
+Rendered rescues/_trace (34.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#create (for 127.0.0.1 at 2010-08-30 08:22:57) [POST]
+  Parameters: {"company"=>{"name"=>"test"}, "commit"=>"Create", "action"=>"create", "authenticity_token"=>"HnpmiVULSvx/KYlUiH49cbgA0CrCrgrCsnHQCugm9XE=", "controller"=>"companies"}
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/companies_controller.rb:47:in `create'
+
+Rendered rescues/_trace (31.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#create (for 127.0.0.1 at 2010-08-30 08:23:14) [POST]
+  Parameters: {"company"=>{"name"=>"test"}, "commit"=>"Create", "action"=>"create", "authenticity_token"=>"HnpmiVULSvx/KYlUiH49cbgA0CrCrgrCsnHQCugm9XE=", "controller"=>"companies"}
+  [4;35;1mCompany Create (1.0ms)[0m   [0mINSERT INTO "companies" ("name", "created_at", "updated_at", "domain", "user_id") VALUES('test', '2010-08-30 07:23:14', '2010-08-30 07:23:14', NULL, NULL)[0m
+Redirected to http://localhost:3000/companies/6
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-08-30 08:23:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"6", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 6) [0m
+Rendering template within layouts/companies
+Rendering companies/show
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects".company_id = 6) [0m
+Completed in 130ms (View: 99, DB: 0) | 200 OK [http://localhost/companies/6]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-08-30 08:23:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/companies
+Rendering companies/index
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-08-30 08:23:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"6", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 6) [0m
+Rendering template within layouts/companies
+Rendering companies/show
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects".company_id = 6) [0m
+Completed in 95ms (View: 83, DB: 0) | 200 OK [http://localhost/companies/6]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-08-30 08:23:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/companies
+Rendering companies/index
+Completed in 25ms (View: 19, DB: 1) | 200 OK [http://localhost/companies]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-08-30 08:23:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/companies
+Rendering companies/new
+Completed in 84ms (View: 78, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#create (for 127.0.0.1 at 2010-08-30 08:23:26) [POST]
+  Parameters: {"company"=>{"name"=>"stuff"}, "commit"=>"Create", "action"=>"create", "authenticity_token"=>"HnpmiVULSvx/KYlUiH49cbgA0CrCrgrCsnHQCugm9XE=", "controller"=>"companies"}
+  [4;36;1mCompany Create (0.4ms)[0m   [0;1mINSERT INTO "companies" ("name", "created_at", "updated_at", "domain", "user_id") VALUES('stuff', '2010-08-30 07:23:26', '2010-08-30 07:23:26', NULL, NULL)[0m
+Redirected to http://localhost:3000/companies/7
+Completed in 21ms (DB: 0) | 302 Found [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-08-30 08:23:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"7", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 7) [0m
+Rendering template within layouts/companies
+Rendering companies/show
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects".company_id = 7) [0m
+Completed in 30ms (View: 18, DB: 0) | 200 OK [http://localhost/companies/7]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-08-30 08:23:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/companies
+Rendering companies/index
+Completed in 97ms (View: 22, DB: 1) | 200 OK [http://localhost/companies]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-08-30 08:23:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 21ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-08-30 08:23:38) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"joseph", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"HnpmiVULSvx/KYlUiH49cbgA0CrCrgrCsnHQCugm9XE=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'joseph') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 271ms (DB: 0) | 302 Found [http://localhost/user_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-08-30 08:23:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Completed in 35ms (View: 27, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-08-30 08:23:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/companies
+Rendering companies/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Completed in 27ms (View: 20, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#create (for 127.0.0.1 at 2010-08-30 08:23:43) [POST]
+  Parameters: {"company"=>{"name"=>"this"}, "commit"=>"Create", "action"=>"create", "authenticity_token"=>"HnpmiVULSvx/KYlUiH49cbgA0CrCrgrCsnHQCugm9XE=", "controller"=>"companies"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mCompany Create (0.4ms)[0m   [0mINSERT INTO "companies" ("name", "created_at", "updated_at", "domain", "user_id") VALUES('this', '2010-08-30 07:23:43', '2010-08-30 07:23:43', NULL, 2)[0m
+Redirected to http://localhost:3000/companies/8
+Completed in 26ms (DB: 1) | 302 Found [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-08-30 08:23:43) [GET]
+  Parameters: {"action"=>"show", "id"=>"8", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 8) [0m
+Rendering template within layouts/companies
+Rendering companies/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects".company_id = 8) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Completed in 35ms (View: 21, DB: 1) | 200 OK [http://localhost/companies/8]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-08-30 08:23:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/companies
+Rendering companies/index
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Completed in 107ms (View: 100, DB: 1) | 200 OK [http://localhost/companies]

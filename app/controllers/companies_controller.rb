@@ -43,8 +43,8 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(params[:company])
     
-    if !current_user.nil
-	    @company.user = current_user
+    if current_user
+	    @company.user_id = current_user.id
     end
 
     respond_to do |format|
